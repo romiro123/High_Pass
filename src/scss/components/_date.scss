@@ -1,0 +1,15 @@
+.date {
+  @include flex-v-center;
+  font-size: 12px;
+  line-height: 22px;
+  color: var(--c-text-dark);
+
+  &--light {
+    color: var(--c-light);
+  }
+
+  & svg {
+    display: block;
+    margin-right: 7px;
+  }
+}

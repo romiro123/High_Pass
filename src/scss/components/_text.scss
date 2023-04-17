@@ -1,0 +1,51 @@
+.text {
+  margin: 0;
+  color: var(--c-dark); //#202020
+  line-height: 22px;
+
+  &--alfa {
+    color: var(--c-text); //#CACACA
+  }
+
+  &--bravo {
+    color: var(--c-text-dark); //#999999;
+  }
+
+  &--light {
+    color: var(--c-light);
+  }
+
+  &--big-lh {
+    line-height: 28px;
+
+    @include mobile {
+      line-height: 25px;
+    }
+  }
+
+  &__visible {
+    display: inline-block;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include small-tablet {
+      display: inline;
+    }
+  }
+
+  &__hidden {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+
+
+  }
+}

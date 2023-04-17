@@ -1,0 +1,207 @@
+.form {
+  &--label {
+    position: relative;
+    width: 100%;
+  }
+
+  &--header {
+    display: block;
+    position: absolute;
+    right: 65px;
+    width: 308px;
+    height: 30px;
+    top: calc(50% - 10px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity .3s ease-in-out,
+      visibility .3s ease-in-out;
+
+    @include mobile {
+      right: 52px;
+      width: calc(100% - (21px + 52px));
+    }
+
+    &-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // &__about-title {
+  //   margin-bottom: 16px;
+
+  //   @include mobile {
+  //     margin-bottom: 14px;
+  //   }
+  // }
+
+  &--about {
+    @include flex;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      max-width: 342px;
+    }
+  }
+
+  &__about-label {
+    margin-right: 30px;
+    width: 100%;
+
+    & .just-validate-error-label {
+      color: var(--c-error-light) !important;
+    }
+
+    @include tablet {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__about-btn {
+    @include tablet {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &--contacts {
+    @include flex;
+    flex-direction: column;
+  }
+
+  &__contacts-title {
+    margin-bottom: 5px;
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__contacts-text {
+    margin-bottom: 12px;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 13px;
+    }
+  }
+
+  &__contacts-label {
+    margin-bottom: 20px;
+
+    & .just-validate-error-label {
+      color: var(--c-error) !important;
+    }
+  }
+
+  &__contacts-btn {
+    margin-right: auto;
+  }
+}
+
+.label {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--c-text-light);
+  padding: 15px 15px 15px 23px;
+  outline: none;
+  color: var(--c-dark);
+  border: 1px solid transparent;
+  transition:
+    border 0.3s ease-in-out;
+
+  @include mobile {
+    padding: 12px 15px 12px 23px;
+  }
+
+  &::placeholder {
+    color: var(--c-text-dark);
+    font-family: 'Roboto';
+    transition:
+      color 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::placeholder {
+      color: var(--c-brand);
+    }
+  }
+
+  &:focus {
+    border: 1px solid var(--c-brand);
+  }
+
+  &--dark {
+    background-color: var(--c-alfa-dark);
+    color: var(--c-light);
+
+    &::placeholder {
+      color: var(--c-text);
+      font-family: 'Roboto';
+    }
+  }
+
+  &--textarea {
+    height: 150px;
+
+    @include mobile {
+      margin-bottom: 18px;
+    }
+  }
+
+  &--search {
+    padding: 5px 0 0;
+    color: var(--c-text-light);
+    background-color: var(--c-dark);
+    border-bottom: 1px solid var(--c-text-light);
+
+    &::placeholder {
+      color: var(--c-text-light);
+    }
+
+    &:hover {
+      &::placeholder {
+        color: var(--c-text-light);
+      }
+
+      border-bottom: 1px solid var(--c-brand);
+    }
+
+    &:focus {
+      &::placeholder {
+        color: var(--c-text-light);
+      }
+
+      border: 1px solid transparent;
+      border-bottom: 1px solid var(--c-brand);
+    }
+
+    &:focus-visible {
+      &::placeholder {
+        color: var(--c-text-light);
+      }
+
+      border-bottom: 1px solid var(--c-error-dark);
+    }
+  }
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: 3px;
+  left: 23px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 11px;
+
+}

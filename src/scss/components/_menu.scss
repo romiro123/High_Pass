@@ -1,0 +1,124 @@
+.menu {
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: fixed;
+        top: 70px;
+        z-index: 10;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - (70px));
+        background-color: var(--c-dark);
+        overflow-y: auto;
+        padding: 14px 21px 36px 21px;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity .3s ease-in-out,
+            visibility .3s ease-in-out;
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: start;
+            padding: 0;
+            margin-bottom: auto;
+        }
+    }
+
+    &__item {
+        @include mobile {
+            font-size: 16px;
+            line-height: 21px;
+            margin-bottom: 30px;
+
+        }
+    }
+
+    &__btn-close {
+        display: none;
+
+        @include mobile {
+            display: block;
+            width: 18px;
+            height: 18px;
+            padding: 0;
+            margin-bottom: 16px;
+
+            &::before {
+                content: "";
+                display: block;
+                background-image: url(../img/svg/close.svg);
+                height: 18px;
+                width: 18px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        font-family: 'TTFirsNeue';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: var(--c-light);
+        transition:
+            color 0.3s ease-in-out,
+            background-color 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--c-brand);
+        }
+
+        &:focus {
+            outline: none;
+            color: var(--c-light);
+            z-index: 1;
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0px;
+                left: -5px;
+                width: calc(100% + 10px);
+                height: 100%;
+                background-color: var(--c-brand-dark);
+                z-index: -1;
+            }
+        }
+
+        &:active {
+            color: var(--c-error-dark);
+        }
+    }
+
+    &__phone {
+        display: none;
+
+        @include mobile {
+            display: flex;
+        }
+    }
+
+}
+
+// &__burger-menu {
+//     @include mobile {
+//         display: none;
+//     }
+// }

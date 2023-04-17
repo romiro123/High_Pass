@@ -1,0 +1,115 @@
+.footer {
+  background-color: var(--c-dark);
+
+  &__container {
+    @include flex;
+    padding-top: 24px;
+    padding-bottom: 16px;
+
+    @include small-tablet {
+      justify-content: space-between;
+      padding-bottom: 22px;
+    }
+
+    @include mobile {
+      justify-content: center;
+      padding-top: 31px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__left {
+    font-family: 'TTFirsNeue';
+    color: var(--c-text-light);
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 2px;
+    margin-right: 202px;
+
+    @include big-desktop {
+      margin-right: calc(133px + 86 * ((100vw - 1024px) / (1920 - 1400)));
+    }
+
+    @include tablet {
+      padding-top: 6px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 7px;
+
+    @include mobile {
+      justify-content: center;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__text {
+    max-width: 361px;
+    margin-right: auto;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__social-title {
+    display: block;
+    margin-bottom: 8px;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__container-bottom {
+    display: none;
+
+    @include mobile {
+      display: block;
+      background-color: var(--c-alfa-dark);
+      color: var(--c-text-light);
+      text-align: center;
+      font-family: 'TTFirsNeue';
+      font-size: 10px;
+      line-height: 13px;
+      padding-top: 14px;
+      padding-bottom: 14px
+    }
+  }
+}
+
+.social {
+  @include flex-all-center;
+
+  &__item {
+    @include mr(20px)
+  }
+
+  &__link {
+    display: flex;
+
+    & svg path {
+      transition: fill .3s ease-in-out;
+      fill: var(--c-text);
+    }
+
+    &:hover svg path {
+      fill: var(--c-brand);
+    }
+
+    &:focus svg path {
+      fill: var(--c-brand-dark);
+    }
+
+    &:active svg path {
+      fill: var(--c-error-dark);
+    }
+
+  }
+}

@@ -1,0 +1,68 @@
+.link {
+  color: var(--c-light);
+  font-weight: 700;
+  line-height: 19px;
+  color: var(--c-light);
+  outline: none;
+  padding: 12px 19px;
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+
+  &--contacts {
+    font-family: 'TTFirsNeue';
+    font-weight: 400;
+    display: flex;
+    color: var(--c-brand);
+    padding: 0;
+
+    & svg {
+      display: block;
+      margin: 0 2px 0px 2px;
+
+      @include mobile {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  &--fill {
+    border: 3px solid transparent;
+
+    background-color: var(--c-brand);
+
+    &:hover {
+      background-color: var(--c-brand-dark);
+    }
+
+    &:focus {
+      border: 3px solid var(--c-error-dark);
+    }
+
+    &:active {
+      background-color: var(--c-error-dark);
+    }
+  }
+
+  &--null {
+    border: 3px solid var(--c-brand);
+
+    &:hover {
+      background-color: var(--c-brand);
+      border: 3px solid transparent;
+    }
+
+    &:focus {
+      background-color: var(--c-brand-dark);
+      border: 3px solid var(--c-brand);
+    }
+
+    &:active {
+      background-color: var(--c-error-dark);
+      border: 3px solid transparent;
+    }
+  }
+
+
+}

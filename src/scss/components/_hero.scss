@@ -1,0 +1,88 @@
+.hero {
+  padding-top: 40px;
+  margin-bottom: 68px;
+
+  @include tablet {
+    padding-top: 35px;
+  }
+
+  @include mobile {
+    padding-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px;
+    }
+  }
+
+  &__left {
+    @include bg-cover;
+    position: relative;
+    grid-column: 1/span 6;
+    background-image: url(../img/hero/hero-1.jpg);
+    padding: 61px 58px;
+
+    @include tablet {
+      background-image: url(../img/hero/hero-1-1024.jpg);
+      padding: 30px 30px;
+    }
+
+    @include small-tablet {
+      background-image: url(../img/hero/hero-1-768.jpg);
+    }
+
+    @include mobile {
+      min-height: 422px;
+      grid-column: 1/ span 2;
+      background-image: url(../img/hero/hero-1-320.jpg);
+    }
+  }
+
+  &__right {
+    grid-column: 7/span 6;
+
+    @include mobile {
+      grid-column: 1/ span 2;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+  }
+
+  &__item-top {
+    grid-column: 1/ span 6;
+    grid-row: 1/2;
+  }
+
+  &__item-left {
+    grid-column: 1/ span 3;
+    grid-row: 2/3;
+  }
+
+  &__item-right {
+    grid-column: 4/ span 3;
+    grid-row: 2/3;
+  }
+}
